@@ -3,10 +3,10 @@
 This Example will show you how to use CallbackData
 """
 
-from telebot.callback_data import CallbackData, CallbackDataFilter
-from telebot import types
-from telebot.async_telebot import AsyncTeleBot
-from telebot.asyncio_filters import AdvancedCustomFilter
+from dgram.callback_data import CallbackData, CallbackDataFilter
+from dgram import types
+from dgram.async_dgram import Asyncdgram
+from dgram.asyncio_filters import AdvancedCustomFilter
 
 API_TOKEN = 'TOKEN'
 PRODUCTS = [
@@ -15,7 +15,7 @@ PRODUCTS = [
     {'id': '2', 'name': 'iphone 13', 'price': 1300}
 ]
 
-bot = AsyncTeleBot(API_TOKEN)
+bot = Asyncdgram(API_TOKEN)
 products_factory = CallbackData('product_id', prefix='products')
 
 

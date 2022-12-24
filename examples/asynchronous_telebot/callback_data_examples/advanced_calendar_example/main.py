@@ -8,11 +8,11 @@ from datetime import date
 
 from filters import calendar_factory, calendar_zoom, bind_filters
 from keyboards import generate_calendar_days, generate_calendar_months, EMTPY_FIELD
-from telebot import types
-from telebot.async_telebot import AsyncTeleBot
+from dgram import types
+from dgram.async_dgram import Asyncdgram
 
 API_TOKEN = ''
-bot = AsyncTeleBot(API_TOKEN)
+bot = Asyncdgram(API_TOKEN)
 
 
 @bot.message_handler(commands='start')
