@@ -53,11 +53,11 @@ import asyncio
 from typing import Union
 
 import keyboards
-from telebot import types
-from telebot.async_telebot import AsyncTeleBot
-from telebot.asyncio_filters import TextMatchFilter, TextFilter
+from dgram import types
+from dgram.async_dgram import Asyncdgram
+from dgram.asyncio_filters import TextMatchFilter, TextFilter
 from i18n_base_middleware import I18N
-from telebot.asyncio_storage.memory_storage import StateMemoryStorage
+from dgram.asyncio_storage.memory_storage import StateMemoryStorage
 
 
 class I18NMiddleware(I18N):
@@ -87,7 +87,7 @@ class I18NMiddleware(I18N):
 
 
 storage = StateMemoryStorage()
-bot = AsyncTeleBot("", state_storage=storage)
+bot = Asyncdgram("", state_storage=storage)
 
 i18n = I18NMiddleware(translations_path='locales', domain_name='messages')
 _ = i18n.gettext  # for singular translations

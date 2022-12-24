@@ -1,8 +1,8 @@
 # Just a little example of middleware handlers
 
-from telebot.asyncio_handler_backends import BaseMiddleware, CancelUpdate
-from telebot.async_telebot import AsyncTeleBot
-bot = AsyncTeleBot('TOKEN')
+from dgram.asyncio_handler_backends import BaseMiddleware, CancelUpdate
+from dgram.async_dgram import Asyncdgram
+bot = Asyncdgram('TOKEN')
 
 
 class SimpleMiddleware(BaseMiddleware):

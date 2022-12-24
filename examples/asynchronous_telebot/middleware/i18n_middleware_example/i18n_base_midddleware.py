@@ -2,7 +2,7 @@ import contextvars
 import gettext
 import os
 
-from telebot.asyncio_handler_backends import BaseMiddleware
+from dgram.asyncio_handler_backends import BaseMiddleware
 
 try:
     from babel.support import LazyProxy

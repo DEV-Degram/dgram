@@ -6,13 +6,13 @@
 # Also, you could check language code in handler itself too.
 # But this example just to show the work of middlewares.
 
-import telebot
-from telebot.async_telebot import AsyncTeleBot
-from telebot import asyncio_handler_backends
+import dgram
+from dgram.async_dgram import Asyncdgram
+from dgram import asyncio_handler_backends
 import logging
 
-logger = telebot.logger
-telebot.logger.setLevel(logging.DEBUG) # Outputs debug messages to console.
+logger = dgram.logger
+dgram.logger.setLevel(logging.DEBUG) # Outputs debug messages to console.
 
 TRANSLATIONS = {
     'hello': {
@@ -24,7 +24,7 @@ TRANSLATIONS = {
 
 
 
-bot = AsyncTeleBot('TOKEN')
+bot = Asyncdgram('TOKEN')
 
 
 class LanguageMiddleware(asyncio_handler_backends.BaseMiddleware):
