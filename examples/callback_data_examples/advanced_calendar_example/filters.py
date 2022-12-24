@@ -1,6 +1,6 @@
-import telebot
-from telebot import types, AdvancedCustomFilter
-from telebot.callback_data import CallbackData, CallbackDataFilter
+import dgram
+from dgram import types, AdvancedCustomFilter
+from dgram.callback_data import CallbackData, CallbackDataFilter
 
 calendar_factory = CallbackData("year", "month", prefix="calendar")
 calendar_zoom = CallbackData("year", prefix="calendar_zoom")
@@ -20,6 +20,6 @@ class CalendarZoomCallbackFilter(AdvancedCustomFilter):
         return config.check(query=call)
 
 
-def bind_filters(bot: telebot.TeleBot):
+def bind_filters(bot: dgram.dgram):
     bot.add_custom_filter(CalendarCallbackFilter())
     bot.add_custom_filter(CalendarZoomCallbackFilter())

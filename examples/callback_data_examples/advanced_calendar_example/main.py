@@ -9,10 +9,10 @@ from datetime import date
 from examples.callback_data_examples.advanced_calendar_example.keyboards import generate_calendar_days, \
     generate_calendar_months, EMTPY_FIELD
 from filters import calendar_factory, calendar_zoom, bind_filters
-from telebot import types, TeleBot
+from dgram import types, dgram
 
 API_TOKEN = ''
-bot = TeleBot(API_TOKEN)
+bot = dgram(API_TOKEN)
 
 
 @bot.message_handler(commands='start')
