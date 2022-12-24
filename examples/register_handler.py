@@ -1,8 +1,8 @@
-import telebot
+import dgram
 
 api_token = 'token'
 
-bot = telebot.TeleBot(api_token)
+bot = dgram.dgram(api_token)
 
 def start_executor(message):
     bot.send_message(message.chat.id, 'Hello!')

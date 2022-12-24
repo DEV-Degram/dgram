@@ -1,9 +1,9 @@
-import telebot
+import dgram
 
 TOKEN = 'YOUR BOT TOKEN'
 CHAT_ID = 'YOUR CHAT ID'
 
-bot = telebot.TeleBot(TOKEN)
+bot = dgram.dgram(TOKEN)
 
 ret_msg = bot.send_voice(CHAT_ID, open('tests/test_data/record.ogg', 'rb'))
 

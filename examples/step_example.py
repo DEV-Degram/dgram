@@ -3,12 +3,12 @@
 This Example will show you how to use register_next_step handler.
 """
 
-import telebot
-from telebot import types
+import dgram
+from dgram import types
 
 API_TOKEN = '<api_token>'
 
-bot = telebot.TeleBot(API_TOKEN)
+bot = dgram.dgram(API_TOKEN)
 
 user_dict = {}
 

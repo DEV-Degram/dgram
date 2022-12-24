@@ -1,7 +1,7 @@
-import telebot
-from telebot import types,util
+import dgram
+from dgram import types,util
 
-bot = telebot.TeleBot("token")
+bot = dgram.dgram("token")
 
 #chat_member_handler. When status changes, telegram gives update. check status from old_chat_member and new_chat_member.
 @bot.chat_member_handler()

@@ -1,11 +1,11 @@
-import telebot
+import dgram
 from time import sleep, time
-from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton #Only for creating Inline Buttons, not necessary for creating Invite Links
+from dgram.types import InlineKeyboardMarkup, InlineKeyboardButton #Only for creating Inline Buttons, not necessary for creating Invite Links
 
 Token = "api_token" #Your Bot Access Token
 Group_ID = -1234567890 #Group ID for which invite link is to be created
 
-bot = telebot.TeleBot(Token, parse_mode="HTML")
+bot = dgram.dgram(Token, parse_mode="HTML")
 
 #/start command message
 @bot.message_handler(commands=['start'])

@@ -1,10 +1,10 @@
-import telebot # telebot
+import dgram # dgram
 
-from telebot import custom_filters
-from telebot.handler_backends import State, StatesGroup #States
+from dgram import custom_filters
+from dgram.handler_backends import State, StatesGroup #States
 
 # States storage
-from telebot.storage import StateMemoryStorage
+from dgram.storage import StateMemoryStorage
 
 
 # Starting from version 4.4.0+, we support storages.
@@ -23,7 +23,7 @@ from telebot.storage import StateMemoryStorage
 # Now, you can pass storage to bot.
 state_storage = StateMemoryStorage() # you can init here another storage
 
-bot = telebot.TeleBot("TOKEN",
+bot = dgram.dgram("TOKEN",
 state_storage=state_storage)
 
 

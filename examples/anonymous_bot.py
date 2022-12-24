@@ -5,11 +5,11 @@
 # `/find` - Find a person you can contact
 # `/stop` - Stop active conversation
 
-import telebot
-from telebot import types
+import dgram
+from dgram import types
 
 # Initialize bot with your token
-bot = telebot.TeleBot('TOKEN')
+bot = dgram.dgram('TOKEN')
 
 # The `users` variable is needed to contain chat ids that are either in the search or in the active dialog, like {chat_id, chat_id}
 users = {}

@@ -5,22 +5,22 @@
 # Important, to update the command menu, be sure to exit the chat with the bot and enter to chat again
 # Important, command for chat_id and for group have a higher priority than for all
 
-import telebot
+import dgram
 
 
 API_TOKEN = '<api_token>'
-bot = telebot.TeleBot(API_TOKEN)
+bot = dgram.dgram(API_TOKEN)
 
 # use in for delete with the necessary scope and language_code if necessary
 bot.delete_my_commands(scope=None, language_code=None)
 
 bot.set_my_commands(
     commands=[
-        telebot.types.BotCommand("command1", "command1 description"),
-        telebot.types.BotCommand("command2", "command2 description")
+        dgram.types.BotCommand("command1", "command1 description"),
+        dgram.types.BotCommand("command2", "command2 description")
     ],
-    # scope=telebot.types.BotCommandScopeChat(12345678)  # use for personal command for users
-    # scope=telebot.types.BotCommandScopeAllPrivateChats()  # use for all private chats
+    # scope=dgram.types.BotCommandScopeChat(12345678)  # use for personal command for users
+    # scope=dgram.types.BotCommandScopeAllPrivateChats()  # use for all private chats
 )
 
 # check command

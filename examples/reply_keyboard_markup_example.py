@@ -1,9 +1,9 @@
 # This example shows you how to create a custom QWERTY keyboard using reply keyboard markup
-import telebot
-from telebot.types import ReplyKeyboardMarkup, KeyboardButton
+import dgram
+from dgram.types import ReplyKeyboardMarkup, KeyboardButton
 
 TOKEN = "<your_token>"
-bot = telebot.TeleBot(TOKEN)
+bot = dgram.dgram(TOKEN)
 
 keys = ["1","2","3","4","5","6","7","8","9","0","q","w","e","r","t","y","u","i","o","p","a","s","d","f","g","h","j","k","l","z","x","c","v","b","n","m"]
 symbols = ["1","2","3","4","5","6","7","8","9","0","!","@","#","$","%","^","&","*","(",")","\'","\"","/","\\",",",".",";",":"]
@@ -47,7 +47,7 @@ def start_message(message):
 @bot.message_handler(func=lambda message:True)
 def all_messages(message):
     if message.text == "✅Done":
-        markup = telebot.types.ReplyKeyboardRemove()
+        markup = dgram.types.ReplyKeyboardRemove()
         bot.send_message(message.from_user.id,"Done with Keyboard",reply_markup=markup)
     elif message.text == "Symbols":
         bot.send_message(message.from_user.id,"Special characters",reply_markup=keyboard("Symbols"))

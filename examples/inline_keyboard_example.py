@@ -1,10 +1,10 @@
 # This example show how to use inline keyboards and process button presses
-import telebot
-from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
+import dgram
+from dgram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 TELEGRAM_TOKEN = '<TOKEN>'
 
-bot = telebot.TeleBot(TELEGRAM_TOKEN)
+bot = dgram.dgram(TELEGRAM_TOKEN)
 
 def gen_markup():
     markup = InlineKeyboardMarkup()

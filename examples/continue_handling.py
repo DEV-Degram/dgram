@@ -1,8 +1,8 @@
-from telebot import TeleBot
-from telebot.handler_backends import ContinueHandling
+from dgram import dgram
+from dgram.handler_backends import ContinueHandling
 
 
-bot = TeleBot('TOKEN')
+bot = dgram('TOKEN')
 
 @bot.message_handler(commands=['start'])
 def start(message):

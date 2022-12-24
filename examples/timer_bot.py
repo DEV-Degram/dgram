@@ -4,10 +4,10 @@
 # https://schedule.readthedocs.io
 
 import time, threading, schedule
-from telebot import TeleBot
+from dgram import dgram
 
 API_TOKEN = '<api_token>'
-bot = TeleBot(API_TOKEN)
+bot = dgram(API_TOKEN)
 
 
 @bot.message_handler(commands=['help', 'start'])

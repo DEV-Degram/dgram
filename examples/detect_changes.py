@@ -3,11 +3,11 @@
 # This is a simple echo bot using the decorator mechanism.
 # It echoes any incoming text messages.
 
-import telebot
+import dgram
 
 API_TOKEN = '<api_token>'
 
-bot = telebot.TeleBot(API_TOKEN)
+bot = dgram.dgram(API_TOKEN)
 
 
 # Handle '/start' and '/help'

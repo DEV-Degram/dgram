@@ -1,9 +1,9 @@
-import telebot
-from telebot.types import LabeledPrice, ShippingOption
+import dgram
+from dgram.types import LabeledPrice, ShippingOption
 
 token = '1234567890:AAAABBBBCCCCDDDDeeeeFFFFgggGHHHH'
 provider_token = '1234567890:TEST:AAAABBBBCCCCDDDD'  # @BotFather -> Bot Settings -> Payments
-bot = telebot.TeleBot(token)
+bot = dgram.dgram(token)
 
 # More about Payments: https://core.telegram.org/bots/payments
 
