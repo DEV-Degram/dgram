@@ -1,7 +1,7 @@
-from telebot.async_telebot import AsyncTeleBot
-import telebot
+from dgram.async_dgram import Asyncdgram
+import dgram
 
-bot = AsyncTeleBot('TOKEN')
+bot = Asyncdgram('TOKEN')
 
 
 
@@ -16,8 +16,8 @@ async def text_filter(message):
     await bot.send_message(message.chat.id, "I do not accept forwarded messages!")
 
 # Do not forget to register filters
-bot.add_custom_filter(telebot.asyncio_filters.IsReplyFilter())
-bot.add_custom_filter(telebot.asyncio_filters.ForwardFilter())
+bot.add_custom_filter(dgram.asyncio_filters.IsReplyFilter())
+bot.add_custom_filter(dgram.asyncio_filters.ForwardFilter())
 
 import asyncio
 asyncio.run(bot.polling())

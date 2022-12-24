@@ -6,11 +6,11 @@ with (message_handler, callback_query_handler, poll_handler)
 """
 import asyncio
 
-from telebot import types
-from telebot.async_telebot import AsyncTeleBot
-from telebot.asyncio_filters import TextMatchFilter, TextFilter, IsReplyFilter
+from dgram import types
+from dgram.async_dgram import Asyncdgram
+from dgram.asyncio_filters import TextMatchFilter, TextFilter, IsReplyFilter
 
-bot = AsyncTeleBot("")
+bot = Asyncdgram("")
 
 
 @bot.message_handler(text=TextFilter(equals='hello'))

@@ -1,6 +1,6 @@
-from telebot.async_telebot import AsyncTeleBot
-import telebot
-bot = AsyncTeleBot('TOKEN')
+from dgram.async_dgram import Asyncdgram
+import dgram
+bot = Asyncdgram('TOKEN')
 
 
 # Check if message starts with @admin tag
@@ -14,8 +14,8 @@ async def text_filter(message):
     await bot.send_message(message.chat.id, "Hi, {name}!".format(name=message.from_user.first_name))
 
 # Do not forget to register filters
-bot.add_custom_filter(telebot.asyncio_filters.TextMatchFilter())
-bot.add_custom_filter(telebot.asyncio_filters.TextStartsFilter())
+bot.add_custom_filter(dgram.asyncio_filters.TextMatchFilter())
+bot.add_custom_filter(dgram.asyncio_filters.TextStartsFilter())
 
 import asyncio
 asyncio.run(bot.polling())

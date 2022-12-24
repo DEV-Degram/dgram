@@ -1,20 +1,20 @@
-from telebot.async_telebot import AsyncTeleBot
-import telebot
-bot = AsyncTeleBot('TOKEN')
+from dgram.async_dgram import Asyncdgram
+import dgram
+bot = Asyncdgram('TOKEN')
 
 
 # AdvancedCustomFilter is for list, string filter values
-class MainFilter(telebot.asyncio_filters.AdvancedCustomFilter):
+class MainFilter(dgram.asyncio_filters.AdvancedCustomFilter):
     key='text'
     @staticmethod
     async def check(message, text):
         return message.text in text
 
 # SimpleCustomFilter is for boolean values, such as is_admin=True
-class IsAdmin(telebot.asyncio_filters.SimpleCustomFilter):
+class IsAdmin(dgram.asyncio_filters.SimpleCustomFilter):
     key='is_admin'
     @staticmethod
-    async def check(message: telebot.types.Message):
+    async def check(message: dgram.types.Message):
         result = await bot.get_chat_member(message.chat.id,message.from_user.id)
         return result.status in ['administrator','creator']
 

@@ -1,6 +1,6 @@
-from telebot.async_telebot import AsyncTeleBot
-import telebot
-bot = AsyncTeleBot('TOKEN')
+from dgram.async_dgram import Asyncdgram
+import dgram
+bot = Asyncdgram('TOKEN')
 
 
 # Chat id can be private or supergroups.
@@ -13,6 +13,6 @@ async def not_admin(message):
     await bot.send_message(message.chat.id, "You are not allowed to use this command")
 
 # Do not forget to register
-bot.add_custom_filter(telebot.asyncio_filters.ChatFilter())
+bot.add_custom_filter(dgram.asyncio_filters.ChatFilter())
 import asyncio
 asyncio.run(bot.polling())

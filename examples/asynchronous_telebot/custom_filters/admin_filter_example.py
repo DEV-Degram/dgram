@@ -1,6 +1,6 @@
-from telebot.async_telebot import AsyncTeleBot
-from telebot import asyncio_filters
-bot = AsyncTeleBot('TOKEN')
+from dgram.async_dgram import Asyncdgram
+from dgram import asyncio_filters
+bot = Asyncdgram('TOKEN')
 
 # Handler
 @bot.message_handler(chat_types=['supergroup'], is_chat_admin=True)
