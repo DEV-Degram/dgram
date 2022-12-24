@@ -4,8 +4,8 @@ This is a detailed example using almost every command of the API
 
 import time
 
-import telebot
-from telebot import types
+import dgram
+from dgram import types
 
 TOKEN = '<token_string>'
 
@@ -41,7 +41,7 @@ def get_user_step(uid):
 # only used for console output now
 def listener(messages):
     """
-    When new messages arrive TeleBot will call this function.
+    When new messages arrive dgram will call this function.
     """
     for m in messages:
         if m.content_type == 'text':
@@ -49,7 +49,7 @@ def listener(messages):
             print(str(m.chat.first_name) + " [" + str(m.chat.id) + "]: " + m.text)
 
 
-bot = telebot.TeleBot(TOKEN)
+bot = dgram.dgram(TOKEN)
 bot.set_update_listener(listener)  # register listener
 
 
