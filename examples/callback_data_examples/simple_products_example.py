@@ -3,9 +3,9 @@
 This Example will show you how to use CallbackData
 """
 
-from telebot.callback_data import CallbackData, CallbackDataFilter
-from telebot import types, TeleBot
-from telebot.custom_filters import AdvancedCustomFilter
+from dgram.callback_data import CallbackData, CallbackDataFilter
+from dgram import types, dgram
+from dgram.custom_filters import AdvancedCustomFilter
 
 API_TOKEN = ''
 PRODUCTS = [
@@ -14,7 +14,7 @@ PRODUCTS = [
     {'id': '2', 'name': 'iphone 13', 'price': 1300}
 ]
 
-bot = TeleBot(API_TOKEN)
+bot = dgram(API_TOKEN)
 products_factory = CallbackData('product_id', prefix='products')
 
 
