@@ -11,8 +11,8 @@ from starlette.applications import Starlette
 from starlette.requests import Request
 from starlette.responses import PlainTextResponse, Response
 from starlette.routing import Route
-from telebot.async_telebot import AsyncTeleBot
-from telebot.types import Message, Update
+from dgram.async_dgram import Asyncdgram
+from dgram.types import Message, Update
 
 API_TOKEN = "TOKEN"
 
@@ -24,10 +24,10 @@ WEBHOOK_SSL_PRIV = "./webhook_pkey.pem"  # Path to the ssl private key
 WEBHOOK_URL = f"https://{WEBHOOK_HOST}:{WEBHOOK_PORT}/telegram"
 WEBHOOK_SECRET_TOKEN = "SECRET_TOKEN"
 
-logger = telebot.logger
-telebot.logger.setLevel(logging.INFO)
+logger = dgram.logger
+dgram.logger.setLevel(logging.INFO)
 
-bot = AsyncTeleBot(token=API_TOKEN)
+bot = Asyncdgram(token=API_TOKEN)
 
 # BOT HANDLERS
 @bot.message_handler(commands=["help", "start"])

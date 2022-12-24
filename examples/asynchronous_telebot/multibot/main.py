@@ -1,13 +1,13 @@
 import asyncio
 
 from aiohttp import web
-from telebot import types, util
-from telebot.async_telebot import AsyncTeleBot
+from dgram import types, util
+from dgram.async_dgram import Asyncdgram
 from handlers import register_handlers
 
 import config
 
-main_bot = AsyncTeleBot(config.MAIN_BOT_TOKEN)
+main_bot = Asyncdgram(config.MAIN_BOT_TOKEN)
 app = web.Application()
 tokens = {config.MAIN_BOT_TOKEN: True}
 
@@ -26,7 +26,7 @@ async def webhook(request):
         await main_bot.process_new_updates([update])
         return web.Response()
 
-    from_update_bot = AsyncTeleBot(token)
+    from_update_bot = Asyncdgram(token)
     register_handlers(from_update_bot)
     await from_update_bot.process_new_updates([update])
     return web.Response()
@@ -40,7 +40,7 @@ async def add_bot(message: types.Message):
     token = util.extract_arguments(message.text)
     tokens[token] = True
 
-    new_bot = AsyncTeleBot(token)
+    new_bot = Asyncdgram(token)
     await new_bot.delete_webhook()
     await new_bot.set_webhook(f"{config.WEBHOOK_HOST}/{config.WEBHOOK_PATH}/{token}")
 

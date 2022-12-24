@@ -4,9 +4,9 @@
 # It echoes any incoming text messages.
 # Example on built-in function to receive and process webhooks.
 
-from telebot.async_telebot import AsyncTeleBot
+from dgram.async_dgram import Asyncdgram
 import asyncio
-bot = AsyncTeleBot('TOKEN')
+bot = Asyncdgram('TOKEN')
 
 
 WEBHOOK_SSL_CERT = './webhook_cert.pem'  # Path to the ssl certificate

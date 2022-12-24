@@ -8,8 +8,8 @@ import logging
 import ssl
 import asyncio
 from aiohttp import web
-import telebot
-from telebot.async_telebot import AsyncTeleBot
+import dgram
+from dgram.async_dgram import Asyncdgram
 
 API_TOKEN = '<api_token>'
 WEBHOOK_HOST = '<ip/host where the bot is running>'
@@ -28,16 +28,16 @@ WEBHOOK_URL_PATH = "/{}/".format(API_TOKEN)
 # When asked for "Common Name (e.g. server FQDN or YOUR name)" you should reply
 # with the same value in you put in WEBHOOK_HOST
 
-logger = telebot.logger
-telebot.logger.setLevel(logging.INFO)
-bot = AsyncTeleBot(API_TOKEN)
+logger = dgram.logger
+dgram.logger.setLevel(logging.INFO)
+bot = Asyncdgram(API_TOKEN)
 
 
 # Process webhook calls
 async def handle(request):
     if request.match_info.get('token') == bot.token:
         request_body_dict = await request.json()
-        update = telebot.types.Update.de_json(request_body_dict)
+        update = dgram.types.Update.de_json(request_body_dict)
         asyncio.ensure_future(bot.process_new_updates([update]))
         return web.Response()
     else:
