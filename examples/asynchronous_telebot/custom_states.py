@@ -1,14 +1,14 @@
-from telebot import asyncio_filters
-from telebot.async_telebot import AsyncTeleBot
+from dgram import asyncio_filters
+from dgram.async_dgram import Asyncdgram
 
 # list of storages, you can use any storage
-from telebot.asyncio_storage import StateMemoryStorage
+from dgram.asyncio_storage import StateMemoryStorage
 
 # new feature for states.
-from telebot.asyncio_handler_backends import State, StatesGroup
+from dgram.asyncio_handler_backends import State, StatesGroup
 
 # default state storage is statememorystorage
-bot = AsyncTeleBot('TOKEN', state_storage=StateMemoryStorage())
+bot = Asyncdgram('TOKEN', state_storage=StateMemoryStorage())
 
 
 # Just create different statesgroup

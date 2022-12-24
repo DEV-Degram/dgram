@@ -1,5 +1,5 @@
-from telebot.async_telebot import AsyncTeleBot
-bot = AsyncTeleBot('TOKEN')
+from dgram.async_dgram import Asyncdgram
+bot = Asyncdgram('TOKEN')
 
 async def start_executor(message):
     await bot.send_message(message.chat.id, 'Hello!')

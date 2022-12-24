@@ -1,8 +1,8 @@
-from telebot.async_telebot import AsyncTeleBot
+from dgram.async_dgram import Asyncdgram
 
 # Update listeners are functions that are called when any update is received.
 
-bot = AsyncTeleBot(token='TOKEN')
+bot = Asyncdgram(token='TOKEN')
 
 async def update_listener(messages):
     for message in messages:

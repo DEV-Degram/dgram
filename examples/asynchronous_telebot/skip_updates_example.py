@@ -1,6 +1,6 @@
-from telebot.async_telebot import AsyncTeleBot
+from dgram.async_dgram import Asyncdgram
 
-bot = AsyncTeleBot('TOKEN')
+bot = Asyncdgram('TOKEN')
 
 @bot.message_handler(commands=['start', 'help'])
 async def send_welcome(message):

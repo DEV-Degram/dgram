@@ -6,10 +6,10 @@
 
 import asyncio
 import aioschedule
-from telebot.async_telebot import AsyncTeleBot
+from dgram.async_dgram import Asyncdgram
 
 API_TOKEN = '<api_token>'
-bot = AsyncTeleBot(API_TOKEN)
+bot = Asyncdgram(API_TOKEN)
 
 
 async def beep(chat_id) -> None:

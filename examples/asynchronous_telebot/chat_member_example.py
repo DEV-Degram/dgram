@@ -1,7 +1,7 @@
-from telebot import types,util
-from telebot.async_telebot import AsyncTeleBot
+from dgram import types,util
+from dgram.async_dgram import Asyncdgram
 
-bot = AsyncTeleBot('TOKEN')
+bot = Asyncdgram('TOKEN')
 
 #chat_member_handler. When status changes, telegram gives update. check status from old_chat_member and new_chat_member.
 @bot.chat_member_handler()

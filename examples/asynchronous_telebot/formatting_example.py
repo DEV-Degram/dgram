@@ -1,7 +1,7 @@
-from telebot.async_telebot import AsyncTeleBot
-from telebot import formatting
+from dgram.async_dgram import Asyncdgram
+from dgram import formatting
 
-bot = AsyncTeleBot('token')
+bot = Asyncdgram('token')
 
 
 @bot.message_handler(commands=['start'])

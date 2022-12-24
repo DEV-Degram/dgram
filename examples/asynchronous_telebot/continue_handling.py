@@ -1,8 +1,8 @@
-from telebot.async_telebot import AsyncTeleBot
-from telebot.asyncio_handler_backends import ContinueHandling
+from dgram.async_dgram import Asyncdgram
+from dgram.asyncio_handler_backends import ContinueHandling
 
 
-bot = AsyncTeleBot('TOKEN')
+bot = Asyncdgram('TOKEN')
 
 @bot.message_handler(commands=['start'])
 async def start(message):
