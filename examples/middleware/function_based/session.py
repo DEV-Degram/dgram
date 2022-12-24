@@ -12,8 +12,8 @@
 # message handler functions to be able to use it.
 # The middleware session is explained:
 
-import telebot
-from telebot import apihelper
+import dgram
+from dgram import apihelper
 
 apihelper.ENABLE_MIDDLEWARE = True
 
@@ -38,7 +38,7 @@ def get_or_create_session(user_id):
         return SESSIONS[user_id]
 
 
-bot = telebot.TeleBot('TOKEN')
+bot = dgram.dgram('TOKEN')
 
 
 @bot.middleware_handler(update_types=['message'])

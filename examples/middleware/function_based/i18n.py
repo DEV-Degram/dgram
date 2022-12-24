@@ -12,8 +12,8 @@
 # handler functions for not repeatedly activating it.
 # The middleware (i18n and l10n) is explained:
 
-import telebot
-from telebot import apihelper
+import dgram
+from dgram import apihelper
 
 apihelper.ENABLE_MIDDLEWARE = True
 
@@ -37,7 +37,7 @@ def _(string):
     return TRANSLATIONS[string][_lang]
 
 
-bot = telebot.TeleBot('TOKEN')
+bot = dgram.dgram('TOKEN')
 
 
 @bot.middleware_handler(update_types=['message'])
